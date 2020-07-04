@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>smooth-scroll</title>
+    <link rel="stylesheet" type="text/css" href="dist/css/bundle.css">
+    <link rel="shortcut icon" href="#" >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0,  minimum-scale=1 maximum-scale=2.0"/>
+  </head>
+  <body>
+    <form class="settings unvisible">
+      <small class="description">
+        After changing the values you do not need to reload.
+      </small>
+      <button class="btn btn-image close-settings" type="button" title="close settings">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="icon">
+          <path d="M10 9L3 2 2 3l7 7-7 7 1 1 7-7 7 7 1-1-7-7 7-7-1-1-7 7z"/>
+        </svg>
+      </button>
+      <div class="settings-item">
+        <div class="duration">
+          <h4 class="header header-small">
+            Duration:
+            <small>(m/s)</small>
+          </h4>
+          <span class="duration-title"></span>
+          <div>
+            <input class="duration-value" type="range" min="50" max="1000" step="25">
+          </div>
+          <div class="duration-values">
+            <small class="duration-min">min 50</small>
+            <small class="duration-max">max 1000</small>
+          </div>
+        </div>
+      </div>
+      <div class="settings-item">
+        <h4 class="header header-small">Animation name:</h4>
+        <select class="animation-names">
+          <option value="ease-in-out">ease-in-out</option>
+          <option value="ease-in">ease-in</option>
+          <option value="ease-out">ease-out</option>
+          <option value="linear">linear</option>
+        </select>
+      </div>
+      <div class="settings-item">
+        <h4 class="header header-small">IsChangeLocationHash:</h4>
+        <label class="label">
+          <span class="label-text">true</span>
+          <input type="radio" name="isCangeLocationHash" value="changeLocation" checked>
+        </label>
+        <label class="label">
+          <span class="label-text">false</span>
+          <input type="radio" name="isCangeLocationHash" value="notChangeLocation" >
+        </label>
+      </div>
+      <div class="settings-item">
+        <h4 class="header header-small">ScrollDirection:</h4>
+        <label class="label">
+          <span class="label-text">vertical</span>
+          <input type="radio" name="scrollDirection" value="vertical" checked>
+        </label>
+        <label class="label">
+          <span class="label-text">horizontal</span>
+          <input type="radio" name="scrollDirection" value="horizontal">
+        </label>
+      </div>
+      <div class="settings-item">
+        <h4 class="header header-small">ScrollContainer:</h4>
+        <label class="label">
+          <span class="label-text">window</span>
+          <input type="radio" name="scrollContainer" value="window" checked>
+        </label>
+        <label class="label">
+          <span class="label-text">HTMLElement</span>
+          <input type="radio" name="scrollContainer" value="HTMLElement">
+        </label>
+      </div>
+    </form>
+    <div class="app">
+      <div class="wrapper-navigation">
+        <nav class="navigation">
+          <ul class="navigation-list">
+            <li class="navigation-item">
+              <a class="link navigation-link" href="#section-1">section 1</a>
+            <li class="navigation-item">
+              <a class="link navigation-link" href="#section-2">section 2</a>
+            <li class="navigation-item">
+              <a class="link navigation-link" href="#section-3">section 3</a>
+            <li class="navigation-item">
+              <a class="link navigation-link" href="#section-4">section 4</a>
+            <li class="navigation-item">
+              <a class="link navigation-link" href="#section-5">section 5</a>
+          </ul>
+          <div class="navigation-buttons">
+            <a class="btn btn-image" href="https://github.com/litichevskiy/smooth-scroll">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon">
+                <path d="M256 0A257 257 0 000 256c0 120 84 229 196 256v-85a63 63 0 01-69-31c-6-9-16-20-27-19l-3-30c24-2 44 14 56 34 5 9 11 14 19 17 8 2 16 1 25-2 3-19 11-27 18-37-67-10-93-45-104-73-14-37-7-83 18-112 1-1 2-3 1-4-11-34 3-62 3-65 13 4 15-4 57 21l7 5h5a218 218 0 01108 0l3 1 2-1c52-32 50-22 64-26 0 3 14 32 3 65-2 5 45 48 19 116-11 28-37 63-104 73 9 13 19 20 19 47v106a266 266 0 00196-256C512 115 397 0 256 0zm0 0"/>
+              </svg>
+            </a>
+            <button class="btn btn-image open-settings" type="button" title="open-settings">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="icon">
+                <path fill="none" d="M0 0h48v48H0z"/>
+                <path d="M39 26v-2-2l4-3v-2l-4-6-1-1-5 2-3-2-1-5-1-1h-8l-1 1-1 5-3 2-5-2-1 1-4 6v2l4 3v4l-4 3v2l4 6 1 1 5-2 3 2 1 5 1 1h8l1-1 1-5 3-2 5 2 1-1 4-6v-2l-4-3zm-15 5a7 7 0 110-14 7 7 0 010 14z"/>
+              </svg>
+            </button>
+            <button class="btn btn-image toggle-menu" title="open-close menu" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" class="icon menu-open">
+                <path d="M24 12H2a1 1 0 000 2h22a1 1 0 000-2zM2 8h22a1 1 0 000-2H2a1 1 0 000 2zM24 18H2a1 1 0 000 2h22a1 1 0 000-2z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="icon menu-close">
+                <path d="M10 9L3 2 2 3l7 7-7 7 1 1 7-7 7 7 1-1-7-7 7-7-1-1-7 7z"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+      <section class="section" id="section-1">
+        <h1 class="header text-center">section 1</h1>
+        <div class="content"></div>
+      </section><!--
+       --><section class="section" id="section-2">
+        <h1 class="header text-center">section 2</h1>
+        <div class="content"></div>
+      </section><section class="section" id="section-3">
+        <h1 class="header text-center" >section 3</h1>
+        <div class="content"></div>
+      </section><!--
+       --><section class="section" id="section-4">
+        <h1 class="header text-center">section 4</h1>
+        <div class="content"></div>
+      </section><!--
+       --><section class="section" id="section-5">
+        <h1 class="header text-center">section 5</h1>
+        <div class="content"></div>
+      </section>
+    </div>
+    <script src="dist/js/bundle.js"></script>
+  </body>
+</html>
