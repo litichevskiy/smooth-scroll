@@ -7,18 +7,15 @@ This is pure JavaScript library for smooth scrolling to anchors.
 **Note:** There's a native CSS way to handle smooth scrolling
 [scroll-behavior](https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior)
 
-
 [Getting started](#Getting-started) | [Options and settings](#Options-and-settings) | [Description](#Description) | [Easing](#Easing)
 
 ## Getting started
 
-
-Include smooth-scroll on your site, code can be found in the `/dist/js` or [with polyfill](https://github.com/litichevskiy/smooth-scroll/tree/master/dist/js/smooth-scroll-polyfill.min.js) | [without polyfill](https://github.com/litichevskiy/smooth-scroll/tree/master/dist/js/smooth-scroll.min.js), `smooth-scroll.polyfill.min.js` contain `Array.from()` and `array.includes()` polyfills.
+Include smooth-scroll on your site, code can be found in the `/dist/js` or [with polyfill](https://litichevskiy.github.io/smooth-scroll/dist/js/smooth-scroll-polyfill.min.js) | [without polyfill](https://litichevskiy.github.io/smooth-scroll/dist/js/smooth-scroll.min.js), `smooth-scroll.polyfill.min.js` contain `Array.from()` and `array.includes()` polyfills.
 
 If you use this library on mobile devices, you need add in <meta ... `initial-scale=1`,  `minimum-scale=1`  />
 
 **Note:** smooth-scroll does not add and change css, classNemes or attributes, `links` must have `href="#value"` attribute and bookmarks must contain `id="value"` attribute.
-
 
 ```javascript
 <script src="path/to/smooth-scroll.min.js"></script>
@@ -32,7 +29,6 @@ import SmoothScroll from 'path/to/file';
   with polyfill  >  src/js/smoothScroll/index.polyfill
 */
 ```
-
 
 ### Init
 
@@ -73,7 +69,6 @@ const smoothScroll = new SmoothScroll({
 
 ## Description
 
-
 |Name|Type|Requred|Default|values|Description|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |`links`|Array|+|-|-| Item must be HTMLElement and contain `href="#some-value"` attribute with value |
@@ -84,7 +79,6 @@ const smoothScroll = new SmoothScroll({
 |`scrollContainer`|HTMLElement, window|-|window|HTMLElement, window|if `scrollContainer` not `window`, container must have `width` or `heights` depending on `scrollDirection` and correctly `overflow` |
 |`customEasing`|Object|-|Object|Object|[See Easing](#Easing)|
 |`headerOffset`|Number|-|0|Number|if navigation have 'fixed' or 'sticky' position, you can add `headerOffset: HTMLElement.offsetHeight`|
-
 
 ## Easing
 
@@ -103,7 +97,6 @@ const easing = {
   timeFraction will be changes from 0 to 1
  */
 ```
-
 
 ### Reduce motion settings
 

@@ -1,6 +1,7 @@
 import { SCROLL_DIRECTIONS, EASING } from './config';
 
 const WRONG_TYPE_LINKS = '"links" must be Array';
+const EMPTY_LINKS = '"links" can not be empty, must contain HTMLelements';
 const WRONG_TYPE_SCROLL_CONTAINER = '"scrollContainer" must be HTML element or "window"';
 const WRONG_TYPE_DURATION = '"duration" must be number more than 0 less Infinity';
 const WRONG_ANIMATION_NAME = `"animationName" can be one of`;
@@ -33,6 +34,8 @@ export default ({
 };
 
 const validateLinksAndBookmarks = ( links ) => {
+
+  if( !links.length ) throw new Error( EMPTY_LINKS );
 
   links.forEach( link => {
     if( !isHTMLElement( link ) ) throw new Error( WRONG_TYPE_LINKS_ITEM );
